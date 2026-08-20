@@ -18,7 +18,8 @@ struct name ## _args {                      \
 };                                          \
 typedef struct name ## _args name ## _args; \
 void name ## _call(void *uargs) {           \
-    struct name ## _args *args = uargs;     \
+    struct name ## _args *args;             \
+    args = (struct name ## _args*)uargs;    \
     args->ret = name();                     \
 }
 
@@ -29,7 +30,8 @@ struct name ## _args {                      \
 };                                          \
 typedef struct name ## _args name ## _args; \
 void name ## _call(void *uargs) {           \
-    struct name ## _args *args = uargs;     \
+    struct name ## _args *args;             \
+    args = (struct name ## _args*)uargs;    \
     name(args->arg0);                       \
 }
 
@@ -41,7 +43,8 @@ struct name ## _args {                      \
 };                                          \
 typedef struct name ## _args name ## _args; \
 void name ## _call(void *uargs) {           \
-    struct name ## _args *args = uargs;     \
+    struct name ## _args *args;             \
+    args = (struct name ## _args*)uargs;    \
     args->ret = name(args->arg0);           \
 }
 
@@ -53,7 +56,8 @@ struct name ## _args {                      \
 };                                          \
 typedef struct name ## _args name ## _args; \
 void name ## _call(void *uargs) {           \
-    struct name ## _args *args = uargs;     \
+    struct name ## _args *args;             \
+    args = (struct name ## _args*)uargs;    \
     name(args->arg0, args->arg1);           \
 }
 
@@ -66,7 +70,8 @@ struct name ## _args {                             \
 };                                                 \
 typedef struct name ## _args name ## _args;        \
 void name ## _call(void *uargs) {                  \
-    struct name ## _args *args = uargs;            \
+    struct name ## _args *args;                    \
+    args = (struct name ## _args*)uargs;           \
     args->ret = name(args->arg0, args->arg1);      \
 }
 
@@ -79,7 +84,8 @@ struct name ## _args {                              \
 };                                                  \
 typedef struct name ## _args name ## _args;         \
 void name ## _call(void *uargs) {                   \
-    struct name ## _args *args = uargs;             \
+    struct name ## _args *args;                     \
+    args = (struct name ## _args*)uargs;            \
     name(args->arg0, args->arg1, args->arg2);       \
 }
 
@@ -93,7 +99,8 @@ struct name ## _args {                                        \
 };                                                            \
 typedef struct name ## _args name ## _args;                   \
 void name ## _call(void *uargs) {                             \
-    struct name ## _args *args = uargs;                       \
+    struct name ## _args *args;                               \
+    args = (struct name ## _args*)uargs;                      \
     args->ret = name(args->arg0, args->arg1, args->arg2);     \
 }
 
@@ -107,7 +114,8 @@ struct name ## _args {                                         \
 };                                                             \
 typedef struct name ## _args name ## _args;                    \
 void name ## _call(void *uargs) {                              \
-    struct name ## _args *args = uargs;                        \
+    struct name ## _args *args;                                \
+    args = (struct name ## _args*)uargs;                       \
     name(args->arg0, args->arg1, args->arg2, args->arg3);      \
 }
 
@@ -122,7 +130,8 @@ struct name ## _args {                                                   \
 };                                                                       \
 typedef struct name ## _args name ## _args;                              \
 void name ## _call(void *uargs) {                                        \
-    struct name ## _args *args = uargs;                                  \
+    struct name ## _args *args;                                          \
+    args = (struct name ## _args*)uargs;                                 \
     args->ret = name(args->arg0, args->arg1, args->arg2, args->arg3);    \
 }
 
